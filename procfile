@@ -1,1 +1,1 @@
-web: gunicorn TechBlogs.wsgi --log-file - 
+web: gunicorn madzimbabwe.wsgi --log-file - 
