@@ -27,7 +27,7 @@ class Post(models.Model):
     comment_count = models.IntegerField(default=0)
     author = models.ForeignKey(Author,on_delete=models.CASCADE)
     thumbnail = models.ImageField()
-    Category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category)
     featured = models.BooleanField(default=True)
 
     def __str__(self):
