@@ -6,7 +6,7 @@ def index(request):
     featuredPost = Post.objects.filter(featured=True)
     index = randnum()
     allCategories = Category.objects.all()
-    categorisedPost = Post.objects.filter(Category=allCategories[index])
+    categorisedPost = Post.objects.filter(category=allCategories[index])
     context = {
         'post_list': featuredPost,
         'cat_list': allCategories,
@@ -22,7 +22,7 @@ def blog(request):
     featuredPost = Post.objects.filter(featured=True)
     index = randnum()
     allCategories = Category.objects.all()
-    categorisedPost = Post.objects.filter(Category=allCategories[index])
+    categorisedPost = Post.objects.filter(category=allCategories[index])
     context = {
         'post_list': featuredPost,
         'cat_list': allCategories,
