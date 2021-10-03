@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tx4zw9u3txndukw!1*3j(pd1oie4ep27szlkl+5bhlm-jfaz3_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -65,8 +65,12 @@ WSGI_APPLICATION = 'madzimbabwe.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "d932ddd856ul4b",
+        'USER':'pvbwlbmftzcsvy',
+        'PASSWORD':'5d59ec48bd553f9cb674cf9e0f7a997ffbf377a860bc0bf96cba7f15cd4b47d1',
+        'HOST':'ec2-3-226-134-153.compute-1.amazonaws.com',
+        'POST':'5432',
     }
 }
 
@@ -116,5 +120,5 @@ MEDIA_ROOT = os.path.join(VENV_PATH,'media_root')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url 
-prod_db=dj_database_url.config(conn_max_age=500)
+prod_db=dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(prod_db)
