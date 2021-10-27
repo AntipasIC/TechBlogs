@@ -7,8 +7,8 @@ from posts.views import index,blog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('blog/',blog)
+    path('', index, name = 'index'),
+    path('blog/',blog, name = 'blog')
 
 ]
 
